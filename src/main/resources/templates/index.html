@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAWA , 인기있는 공간이 궁금하다면</title>
+    <link th:href="@{/css/style.css}"
+            rel="stylesheet" href="/../resources/static/css/style.css">
+    <script src="https://kit.fontawesome.com/8dd996c4db.js" crossorigin="anonymous">
+    </script>
+</head>
+<body> <!-- 홈페이지 기본 레이아웃 max width 80 % -->
+<header>
+    <div class="fullLayOut">
+        <nav class="navbar">
+            <div class="navbar__logo">
+                <a class="link" href="http://127.0.0.1:5500/AirBnB.html#">
+                    <img th:src="@{img/image2/NAWA__logo.png}"
+                            src="resources/static/img/image2/NAWA__logo.png" width="110" alt="에어비앤비 로고">
+                </a>
+            </div>
+            <ul class="navbar__menu">
+                <li><a class="link"  href="#실시간">실시간</a></li>
+                <li><a class="link" href="#일간">일간</a></li>
+                <li><a class="link" href="#주간">주간</a></li>
+                <li><a class="link" href="#월간">월간</a></li>
+            </ul>
+            <ul class="navbar__usertab">
+                <li><a class="link" href="#"><i class="fas fa-globe"></i></a></li>
+                <li><a class="link" href="#"><i class="fas fa-address-card"></i></a></li>
+            </ul>
+        </nav>
+        <div class="background-img">
+            <div class="center__button">
+                <div class="centerText">
+                    <h2>데이터 기준의 트랜드한 장소를 소개해 드려요!</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="fullLayOut2">
+    <br> <!-- 줄바꿈 -->
+    <h2>
+        Restaurant - 식당 -
+    </h2>
+        <div class="first__area">
+        <div class="contant__ranking__box">
+            <img class="card__img1" src=${img0}>
+            <img class="card__img1" src=${img0}>
+
+
+            <div class="ranking">
+                <h2>1</h2>
+            </div>
+            <div class="card__text">
+                <h4>
+                    <br>
+                </h4>
+                <p>텍스트 영역</p>
+            </div>
+        </div>
+
+        <div class="contant__ranking__box">
+            <img class="card__img2" src="<%=img1%>">
+            <div class="ranking">
+                <h2>2</h2>
+            </div>
+            <div class="card__text">
+                <h4>
+                    텍스트 영역<br>
+                </h4>
+                <p>텍스트 영역</p>
+            </div>
+        </div>
+
+        <div class="contant__ranking__box">
+            <img class="card__img3" src="<%=img2%>">
+            <div class="ranking">
+                <h2>3</h2>
+            </div>
+            <div class="card__text">
+                <h4>
+                    텍스트 영역<br>
+                </h4>
+                <p>텍스트 영역</p>
+            </div>
+        </div>
+
+        <div class="contant__ranking__box">
+
+            <img class="card__img4" src="<%=img3%>">
+            <div class="ranking">
+                <h2>4</h2>
+            </div>
+            <div class="card__text">
+                <h4>
+                    텍스트 영역<br>
+                </h4>
+                <p>텍스트 영역</p>
+            </div>
+        </div>
+
+        <div class="contant__ranking__box">
+
+            <img class="card__img5" src="<%=img4%>">
+            <div class="ranking">
+                <h2>5</h2>
+            </div>
+            <div class="card__text">
+                <h4>
+                    텍스트 영역<br>
+                </h4>
+                <p>텍스트 영역</p>
+            </div>
+        </div>
+    </div>
+
+    <br> <!-- 줄바꿈 -->
+
+    <h2>
+        park - 공원 -
+    </h2>
+    <div class="first__area">
+        <div class="contant__ranking__box">
+
+            <img class="card__img1" src="<%=img6%>">
+            <div class="ranking">
+                <h2>1</h2>
+            </div>
+            <div class="card__text">
+                <h4>
+                    텍스트 영역<br>
+                </h4>
+                <p>텍스트 영역</p>
+            </div>
+        </div>
+
+        <div class="contant__ranking__box">
+            <img class="card__img2" src="<%=img7%>">
+            <div class="ranking">
+                <h2>2</h2>
+            </div>
+            <div class="card__text">
+                <h4>
+                    텍스트 영역<br>
+                </h4>
+                <p>텍스트 영역</p>
+            </div>
+        </div>
+
+        <div class="contant__ranking__box">
+            <img class="card__img3" src="<%=img8%>">
+            <div class="ranking">
+                <h2>3</h2>
+            </div>
+            <div class="card__text">
+                <h4>
+                    텍스트 영역<br>
+                </h4>
+                <p>텍스트 영역</p>
+            </div>
+        </div>
+
+        <div class="contant__ranking__box">
+            <img class="card__img4" src="<%=img9%>">
+            <div class="ranking">
+                <h2>4</h2>
+            </div>
+            <div class="card__text">
+                <h4>
+                    텍스트 영역<br>
+                </h4>
+                <p>텍스트 영역</p>
+            </div>
+        </div>
+
+        <div class="contant__ranking__box">
+            <img class="card__img5" src="<%=img10%>">
+            <div class="ranking">
+                <h2>5</h2>
+            </div>
+            <div class="card__text">
+                <h4>
+                    텍스트 영역<br>
+                </h4>
+                <p>텍스트 영역</p>
+            </div>
+        </div>
+
+    </div>
+
+    <br> <!-- 줄바꿈 -->
+
+    <h2>
+        cafe - 카페 -
+    </h2>
+    <div class="first__area">
+        <div class="contant__ranking__box">
+            <img class="card__img1" src="<%=img11%>">
+            <div class="ranking">
+                <h2>1</h2>
+            </div>
+            <div class="card__text">
+                <h4>
+                    텍스트 영역<br>
+                </h4>
+                <p>텍스트 영역</p>
+            </div>
+        </div>
+
+        <div class="contant__ranking__box">
+            <img class="card__img2" src="<%=img12%>">
+            <div class="ranking">
+                <h2>2</h2>
+            </div>
+            <div class="card__text">
+                <h4>
+                    텍스트 영역<br>
+                </h4>
+                <p>텍스트 영역</p>
+            </div>
+        </div>
+
+        <div class="contant__ranking__box">
+            <img class="card__img3" src="<%=img13%>">
+            <div class="ranking">
+                <h2>3</h2>
+            </div>
+            <div class="card__text">
+                <h4>
+                    텍스트 영역<br>
+                </h4>
+                <p>텍스트 영역</p>
+            </div>
+        </div>
+
+        <div class="contant__ranking__box">
+            <img class="card__img4" src="<%=img14%>">
+            <div class="ranking">
+                <h2>4</h2>
+            </div>
+            <div class="card__text">
+                <h4>
+                    텍스트 영역<br>
+                </h4>
+                <p>텍스트 영역</p>
+            </div>
+        </div>
+
+        <div class="contant__ranking__box">
+            <img class="card__img5" src="<%=img15%>">
+            <div class="ranking">
+                <h2>5</h2>
+            </div>
+            <div class="card__text">
+                <h4>
+                    텍스트 영역<br>
+                </h4>
+                <p>텍스트 영역</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<div class="fullLayout7">
+    <p id="실시간">
+    <h2>실시간</h2>
+</div>
+<br>
+
+<section class="ranking__first">
+
+    <div class="fullLayout3">
+
+        <div class="img__card__contant1">
+
+        </div>
+
+        <div class="text__Box">
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<section class="ranking__second">
+
+    <div class="fullLayout4">
+
+        <div class="text__Box">
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+
+        </div>
+
+        <div class="img__card__contant2">
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="ranking__third">
+
+    <div class="fullLayout5">
+
+        <div class="img__card__contant3">
+
+        </div>
+
+        <div class="text__Box">
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+        </div>
+
+    </div>
+
+</section>
+
+<br>
+<div class="fullLayout7">
+    <p id="일간">
+    <h2>일간</h2>
+</div>
+<br>
+
+<section class="ranking__first">
+
+    <div class="fullLayout3">
+
+        <div class="img__card__contant1">
+
+        </div>
+
+        <div class="text__Box">
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="ranking__second">
+
+    <div class="fullLayout4">
+
+        <div class="text__Box">
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+
+        </div>
+
+        <div class="img__card__contant2">
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<section class="ranking__third">
+
+    <div class="fullLayout5">
+
+        <div class="img__card__contant3">
+
+        </div>
+
+        <div class="text__Box">
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+        </div>
+
+    </div>
+
+
+</section>
+
+<br>
+<div class="fullLayout7">
+    <p id="주간">
+    <h2>주간</h2>
+</div>
+<br>
+
+<section class="ranking__first">
+
+    <div class="fullLayout3">
+
+        <div class="img__card__contant1">
+
+        </div>
+
+        <div class="text__Box">
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<section class="ranking__second">
+
+    <div class="fullLayout4">
+
+        <div class="text__Box">
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+
+        </div>
+
+        <div class="img__card__contant2">
+
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<section class="ranking__third">
+
+    <div class="fullLayout5">
+
+        <div class="img__card__contant3">
+
+        </div>
+
+        <div class="text__Box">
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+        </div>
+
+    </div>
+
+
+</section>
+
+<br>
+<div class="fullLayout7">
+    <p id="월간"></p>
+    <h2>월간</h2>
+</div>
+<br>
+
+<section class="ranking__first">
+
+    <div class="fullLayout3">
+
+        <div class="img__card__contant1">
+
+        </div>
+
+        <div class="text__Box">
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<section class="ranking__second">
+
+    <div class="fullLayout4">
+
+        <div class="text__Box">
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+
+        </div>
+
+        <div class="img__card__contant2">
+
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<section class="ranking__third">
+
+    <div class="fullLayout5">
+
+        <div class="img__card__contant3">
+
+        </div>
+
+        <div class="text__Box">
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+            asgfmqwdlksamcqwicasgfmqwdlksamcqwicasgfmqwdlksamcqwic<br>
+        </div>
+
+    </div>
+
+</section>
+
+<div>
+
+</div>
+
+</body>
+
+<footer>
+    Footer
+</footer>
+</html>
