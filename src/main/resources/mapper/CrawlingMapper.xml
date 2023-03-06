@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="Nawa3.Nawa3.mapper.CrawlingMapper">
+
+    <select id="selectCrawling" resultType="Nawa3.Nawa3.dto.CrawlingDto">
+        SELECT *
+        FROM crawling
+        WHERE count = 1
+    </select>
+
+</mapper>
+
