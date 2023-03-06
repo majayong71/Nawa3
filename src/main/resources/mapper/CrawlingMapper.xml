@@ -9,5 +9,11 @@
         FROM crawling
     </select>
 
+    <select id="selectCrawlingById" resultType="Nawa3.Nawa3.dto.CrawlingDto">
+        SELECT *
+        FROM crawling
+        WHERE count = #{id}
+    </select>
+
 </mapper>
 

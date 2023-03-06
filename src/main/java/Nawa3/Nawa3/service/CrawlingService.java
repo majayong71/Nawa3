@@ -17,4 +17,8 @@ public class CrawlingService {
     public List<CrawlingDto> getCrawling() {
         return crawlingMapper.selectAllCrawling();
     }
+
+    public CrawlingDto getCrawlingById(Integer id) {
+        return crawlingMapper.selectCrawlingById(id);
+    }
 }

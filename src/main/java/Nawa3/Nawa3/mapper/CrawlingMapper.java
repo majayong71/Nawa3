@@ -10,4 +10,6 @@ import java.util.List;
 public interface CrawlingMapper {
 
     List<CrawlingDto> selectAllCrawling();
+
+    CrawlingDto selectCrawlingById(Integer id);
 }
