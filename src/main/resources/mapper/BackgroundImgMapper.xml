@@ -7,6 +7,6 @@
     <select id="selectBackgroundImg" resultType="Nawa3.Nawa3.dto.BackgroundDto">
         SELECT *
         FROM background_img
-        WHERE count = 1
+        WHERE count = #{id}
     </select>
 </mapper>

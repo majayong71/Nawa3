@@ -5,13 +5,16 @@ import Nawa3.Nawa3.mapper.CrawlingMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
+
 @Service
 public class CrawlingService {
 
     @Autowired
     private CrawlingMapper crawlingMapper;
 
-    public CrawlingDto getCrawling() {
-        return crawlingMapper.selectCrawling();
+    public List<CrawlingDto> getCrawling() {
+        return crawlingMapper.selectAllCrawling();
     }
 }

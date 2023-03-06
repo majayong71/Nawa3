@@ -1,6 +1,6 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: QhrtnswoTkddl1!6
     url: jdbc:mysql://localhost:3306/nawa
@@ -9,7 +9,8 @@ server:
 
 mybatis:
   mapper-locations: classpath:/mapper/**/*.xml
-
+  configuration:
+    map-underscore-to-camel-case: true
 
 
   # JSP ?? ??,, MYBATIS ??

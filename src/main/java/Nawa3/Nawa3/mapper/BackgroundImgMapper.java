@@ -7,6 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface BackgroundImgMapper {
 
-        BackgroundDto selectBackgroundImg();
+    BackgroundDto selectBackgroundImg(Integer id);
 
 }

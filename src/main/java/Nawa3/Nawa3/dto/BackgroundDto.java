@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Setter
 public class BackgroundDto {
     private Integer count;
-    private String place_type;
+    private String placeType;
     private LocalDateTime created;
-    private String img_source;
+    private String imgSource;
 }

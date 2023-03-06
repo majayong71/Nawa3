@@ -12,14 +12,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 @Controller
 public class CrawlingController {
 
     @Autowired
     private CrawlingService crawlingService;
-
-    @Autowired
-    private BackgroundService backgroundService;
 
     @GetMapping("/")
     public String nawaWelcomePage (Model model) {
@@ -32,13 +31,7 @@ public class CrawlingController {
 
     @GetMapping("/test")
     @ResponseBody
-    public CrawlingDto testData () {
+    public List<CrawlingDto> testData () {
         return crawlingService.getCrawling();
-    }
-
-    @GetMapping("/test2")
-    @ResponseBody
-    public BackgroundDto testDataA () {
-        return backgroundService.getBackground();
     }
 }

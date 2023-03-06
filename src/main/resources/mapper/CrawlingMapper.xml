@@ -4,10 +4,9 @@
 
 <mapper namespace="Nawa3.Nawa3.mapper.CrawlingMapper">
 
-    <select id="selectCrawling" resultType="Nawa3.Nawa3.dto.CrawlingDto">
+    <select id="selectAllCrawling" resultType="Nawa3.Nawa3.dto.CrawlingDto">
         SELECT *
         FROM crawling
-        WHERE count = 1
     </select>
 
 </mapper>

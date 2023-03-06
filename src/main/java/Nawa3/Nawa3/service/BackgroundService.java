@@ -11,8 +11,8 @@ public class BackgroundService {
     @Autowired
     private BackgroundImgMapper backgroundImgMapper;
 
-    public BackgroundDto getBackground() {
-        return backgroundImgMapper.selectBackgroundImg();
+    public BackgroundDto getBackground(Integer id) {
+        return backgroundImgMapper.selectBackgroundImg(id);
     }
 
 }
