@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Nawa3.Nawa3.mapper.CrawlingMapper2">  <!-- 경로 (복습포인트) !-->
+
+    <select id="selectAllCrawling2" resultType="Nawa3.Nawa3.dto.CrawlingDto"> <!-- select id = 변수명 , resultType = 경로설정 !-->
+        SELECT *
+        FROM crawling
+    </select>
+
+    <select id="selectAllCrawlingById2" resultType="Nawa3.Nawa3.dto.CrawlingDto">
+        SELECT *
+        FROM CRAWLING
+        WHERE count = #{id} <!-- where 공부해놓기!-->
+    </select>
+
+</mapper>
