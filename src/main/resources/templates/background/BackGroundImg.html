@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 <div>
-    [[${back.placeType}]]
+    <img id = "backImg" th:src = "${back.imgSource}"
+         alt = "첨부이미지"
+         />
 </div>
 
 [[${back.count}]]

@@ -28,6 +28,6 @@ public class BackGroundController {
     @GetMapping("/test3/{id}")
     public String backgroundDataPage (Model model, @PathVariable("id") Integer key) {
          model.addAttribute("back", backgroundService.getBackground(key));
-        return "BackGroundImg";
+        return "background/BackGroundImg.html";
     }
 }

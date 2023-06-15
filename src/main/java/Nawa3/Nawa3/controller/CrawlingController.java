@@ -28,6 +28,12 @@ public class CrawlingController {
 
         return "index";
     }
+
+    @GetMapping("/test/12")
+    public String testData41 (Model model) {
+        model.addAttribute("img0",crawlingService.getCrawlingById(1));
+        return "index.html";
+    }
     @GetMapping("/test/10")
     public String testData3 (Model model) {
         model.addAttribute("img0",crawlingService.getCrawling());
@@ -60,6 +66,5 @@ public class CrawlingController {
     public CrawlingDto testDataB (@PathVariable("id") Integer id) {
         return crawlingService.getCrawlingById(id);
     }
-
 
 }
