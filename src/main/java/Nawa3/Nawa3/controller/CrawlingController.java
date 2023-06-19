@@ -4,12 +4,10 @@ package Nawa3.Nawa3.controller;
 import Nawa3.Nawa3.dto.CrawlingDto;
 import Nawa3.Nawa3.service.CrawlingService;
 import Nawa3.Nawa3.service.CrawlingService2;
-import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @Controller
@@ -22,11 +20,10 @@ public class CrawlingController {
 
     @GetMapping("/")
     public String nawaWelcomePage (Model model) {
-
-        model.addAttribute("textcode","테스트코드");
-        System.out.println(model);
-
+//        crawlingService.getCrawling();
+//        model.addAttribute("img",crawlingService);
         return "index";
+
     }
 
     @GetMapping("/test/12")

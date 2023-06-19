@@ -8,6 +8,8 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class CrawlingDto {
+
+    private Integer rank;
     private Integer count;
     private String placeType;
     private LocalDateTime created;
