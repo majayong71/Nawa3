@@ -15,4 +15,11 @@
         WHERE count = #{id}
     </select>
 
+    <select id="selectCrawlingByImgSource" resultType="Nawa3.Nawa3.dto.CrawlingDto">
+            SELECT *
+            FROM crawling
+            WHERE rank2 <![CDATA[<=]]> 5;
+    </select>
+
+
 </mapper>

@@ -11,4 +11,6 @@ public interface CrawlingMapper {
     List<CrawlingDto> selectAllCrawling();
 
     CrawlingDto selectCrawlingById(Integer id);
+
+    List<CrawlingDto> selectCrawlingByImgSource (Integer id);
 }

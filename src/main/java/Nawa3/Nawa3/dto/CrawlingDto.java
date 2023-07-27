@@ -15,4 +15,5 @@ public class CrawlingDto {
     private LocalDateTime created;
     private String timeType;
     private String imgSource;
+
 }

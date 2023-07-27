@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAWA , 인기있는 공간이 궁금하다면</title>
     <link th:href="@{/css/style.css}"
-            rel="stylesheet" href="/../resources/static/css/style.css">
+          rel="stylesheet" href="/../resources/static/css/style.css">
     <script src="https://kit.fontawesome.com/8dd996c4db.js" crossorigin="anonymous">
     </script>
 </head>
@@ -17,11 +17,11 @@
             <div class="navbar__logo">
                 <a class="link" href="http://127.0.0.1:5500/AirBnB.html#">
                     <img th:src="@{img/image2/NAWA__logo.png}"
-                            src="resources/static/img/image2/NAWA__logo.png" width="110" alt="에어비앤비 로고">
+                         src="resources/static/img/image2/NAWA__logo.png" width="110" alt="에어비앤비 로고">
                 </a>
             </div>
             <ul class="navbar__menu">
-                <li><a class="link"  href="#실시간">실시간</a></li>
+                <li><a class="link" href="#실시간">실시간</a></li>
                 <li><a class="link" href="#일간">일간</a></li>
                 <li><a class="link" href="#주간">주간</a></li>
                 <li><a class="link" href="#월간">월간</a></li>
@@ -31,14 +31,14 @@
                 <li><a class="link" href="#"><i class="fas fa-address-card"></i></a></li>
             </ul>
         </nav>
-<!--        <div class="background-img">-->
+        <!--        <div class="background-img">-->
         <img th : src="background">
-            <div class="center__button">
-                <div class="centerText">
-                    <h2>데이터 기준의 트랜드한 장소를 소개해 드려요!</h2>
-                </div>
+        <div class="center__button">
+            <div class="centerText">
+                <h2>데이터 기준의 트랜드한 장소를 소개해 드려요!</h2>
             </div>
-<!--        </div>-->
+        </div>
+        <!--        </div>-->
     </div>
 </header>
 <div class="fullLayOut2">
@@ -46,10 +46,13 @@
     <h2>
         Restaurant - 식당 -
     </h2>
-        <div class="first__area">
-        <div class="content__ranking__box">
-            <img  >
-            <img class="card__img1" th:src=${count[1].count>
+
+    <div class="first__area">
+        <!--    타임리프 문법 th:each -->
+        <li th:each="a : ${img1}">
+
+        <div class="content__ranking__box" >
+            <img class="card__img1" th:src="${a.imgSource}" width="300">
             <div class="ranking">
                 <h2>1</h2>
             </div>
@@ -61,59 +64,62 @@
             </div>
         </div>
 
-        <div class="content__ranking__box">
-            <img class="card__img2" src="<%=img1%>">
-            <div class="ranking">
-                <h2>2</h2>
-            </div>
-            <div class="card__text">
-                <h4>
-                    텍스트 영역<br>
-                </h4>
-                <p>텍스트 영역</p>
-            </div>
-        </div>
+<!--        <div class="content__ranking__box">-->
 
-        <div class="content__ranking__box">
-            <img class="card__img3" src="<%=img2%>">
-            <div class="ranking">
-                <h2>3</h2>
-            </div>
-            <div class="card__text">
-                <h4>
-                    텍스트 영역<br>
-                </h4>
-                <p>텍스트 영역</p>
-            </div>
-        </div>
+<!--            <img class="card__img2" src="<%=img0%>">-->
+<!--            <div class="ranking">-->
+<!--                <h2>2</h2>-->
+<!--            </div>-->
+<!--            <div class="card__text">-->
+<!--                <h4>-->
+<!--                    텍스트 영역<br>-->
+<!--                </h4>-->
+<!--                <p>텍스트 영역</p>-->
+<!--            </div>-->
 
-        <div class="content__ranking__box">
+<!--        </div>-->
 
-            <img class="card__img4" src="<%=img3%>">
-            <div class="ranking">
-                <h2>4</h2>
-            </div>
-            <div class="card__text">
-                <h4>
-                    텍스트 영역<br>
-                </h4>
-                <p>텍스트 영역</p>
-            </div>
-        </div>
+<!--        <div class="content__ranking__box">-->
+<!--            <img class="card__img3" src="<%=img2%>">-->
+<!--            <div class="ranking">-->
+<!--                <h2>3</h2>-->
+<!--            </div>-->
+<!--            <div class="card__text">-->
+<!--                <h4>-->
+<!--                    텍스트 영역<br>-->
+<!--                </h4>-->
+<!--                <p>텍스트 영역</p>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="content__ranking__box">
+<!--        <div class="content__ranking__box">-->
 
-            <img class="card__img5" src="<%=img4%>">
-            <div class="ranking">
-                <h2>5</h2>
-            </div>
-            <div class="card__text">
-                <h4>
-                    텍스트 영역<br>
-                </h4>
-                <p>텍스트 영역</p>
-            </div>
-        </div>
+<!--            <img class="card__img4" src="<%=img3%>">-->
+<!--            <div class="ranking">-->
+<!--                <h2>4</h2>-->
+<!--            </div>-->
+<!--            <div class="card__text">-->
+<!--                <h4>-->
+<!--                    텍스트 영역<br>-->
+<!--                </h4>-->
+<!--                <p>텍스트 영역</p>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="content__ranking__box">-->
+
+<!--            <img class="card__img5" src="<%=img4%>">-->
+<!--            <div class="ranking">-->
+<!--                <h2>5</h2>-->
+<!--            </div>-->
+<!--            <div class="card__text">-->
+<!--                <h4>-->
+<!--                    텍스트 영역<br>-->
+<!--                </h4>-->
+<!--                <p>텍스트 영역</p>-->
+<!--            </div>-->
+<!--        </div>-->
+        </li>
     </div>
 
     <br> <!-- 줄바꿈 -->
@@ -122,6 +128,7 @@
         park - 공원 -
     </h2>
     <div class="first__area">
+        <li th:each ="a : ${img1}">
         <div class="content__ranking__box">
 
             <img class="card__img1" src="<%=img6%>">
@@ -135,58 +142,59 @@
                 <p>텍스트 영역</p>
             </div>
         </div>
+        </li>
 
-        <div class="__ranking__box">
-            <img class="card__img2" src="<%=img7%>">
-            <div class="ranking">
-                <h2>2</h2>
-            </div>
-            <div class="card__text">
-                <h4>
-                    텍스트 영역<br>
-                </h4>
-                <p>텍스트 영역</p>
-            </div>
-        </div>
+<!--        <div class="__ranking__box">-->
+<!--            <img class="card__img2" src="<%=img7%>">-->
+<!--            <div class="ranking">-->
+<!--                <h2>2</h2>-->
+<!--            </div>-->
+<!--            <div class="card__text">-->
+<!--                <h4>-->
+<!--                    텍스트 영역<br>-->
+<!--                </h4>-->
+<!--                <p>텍스트 영역</p>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="content__ranking__box">
-            <img class="card__img3" src="<%=img8%>">
-            <div class="ranking">
-                <h2>3</h2>
-            </div>
-            <div class="card__text">
-                <h4>
-                    텍스트 영역<br>
-                </h4>
-                <p>텍스트 영역</p>
-            </div>
-        </div>
+<!--        <div class="content__ranking__box">-->
+<!--            <img class="card__img3" src="<%=img8%>">-->
+<!--            <div class="ranking">-->
+<!--                <h2>3</h2>-->
+<!--            </div>-->
+<!--            <div class="card__text">-->
+<!--                <h4>-->
+<!--                    텍스트 영역<br>-->
+<!--                </h4>-->
+<!--                <p>텍스트 영역</p>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="content__ranking__box">
-            <img class="card__img4" src="<%=img9%>">
-            <div class="ranking">
-                <h2>4</h2>
-            </div>
-            <div class="card__text">
-                <h4>
-                    텍스트 영역<br>
-                </h4>
-                <p>텍스트 영역</p>
-            </div>
-        </div>
+<!--        <div class="content__ranking__box">-->
+<!--            <img class="card__img4" src="<%=img9%>">-->
+<!--            <div class="ranking">-->
+<!--                <h2>4</h2>-->
+<!--            </div>-->
+<!--            <div class="card__text">-->
+<!--                <h4>-->
+<!--                    텍스트 영역<br>-->
+<!--                </h4>-->
+<!--                <p>텍스트 영역</p>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="content__ranking__box">
-            <img class="card__img5" src="<%=img10%>">
-            <div class="ranking">
-                <h2>5</h2>
-            </div>
-            <div class="card__text">
-                <h4>
-                    텍스트 영역<br>
-                </h4>
-                <p>텍스트 영역</p>
-            </div>
-        </div>
+<!--        <div class="content__ranking__box">-->
+<!--            <img class="card__img5" src="<%=img10%>">-->
+<!--            <div class="ranking">-->
+<!--                <h2>5</h2>-->
+<!--            </div>-->
+<!--            <div class="card__text">-->
+<!--                <h4>-->
+<!--                    텍스트 영역<br>-->
+<!--                </h4>-->
+<!--                <p>텍스트 영역</p>-->
+<!--            </div>-->
+<!--        </div>-->
 
     </div>
 
