@@ -9,6 +9,10 @@
           rel="stylesheet" href="/../resources/static/css/style.css">
     <script src="https://kit.fontawesome.com/8dd996c4db.js" crossorigin="anonymous">
     </script>
+    <script
+        src ="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script src="/static/js/ajax-scripts.js"></script>
 </head>
 <body> <!-- 홈페이지 기본 레이아웃 max width 80 % -->
 <header>
@@ -49,7 +53,7 @@
 
     <div class="first__area">
         <!--    타임리프 문법 th:each -->
-        <li th:each="a : ${img1}">
+        <li th:each="a : ${crawlingByImgsource}">
 
         <div class="content__ranking__box" >
             <img class="card__img1" th:src="${a.imgSource}" width="300">

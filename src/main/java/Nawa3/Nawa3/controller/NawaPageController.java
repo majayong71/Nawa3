@@ -14,10 +14,15 @@ public class NawaPageController {
     @Autowired
     private CrawlingService crawlingService;
 
+//    @GetMapping ("/")
+//    public String nawaWelcomePage (Model model) {
+//        List<CrawlingDto> crawlingByImgSource = crawlingService.getCrawlingByImgSource(1);
+//        model.addAttribute("img1",crawlingByImgSource);
+//        return "index";
+//    }
+
     @GetMapping ("/")
-    public String nawaWelcomePage (Model model) {
-        List<CrawlingDto> crawlingByImgSource = crawlingService.getCrawlingByImgSource(1);
-        model.addAttribute("img1",crawlingByImgSource);
+    public String nawaWelcomePage () {
         return "index";
     }
 }
