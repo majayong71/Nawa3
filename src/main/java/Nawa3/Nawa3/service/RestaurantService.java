@@ -23,10 +23,13 @@ public class RestaurantService { // Restaurant 에 관련된 로직 , 기능 클
         return restaurantRepository.findAll();
     }
 
-    public List<RestaurantResponseDto> findAllRestaurantResponse() {
+    public List<RestaurantResponseDto> findAllRestaurantResponse() { //전체조회 응답
         return restaurantResponseDtoRepository.findAll();
     }
 
+    public void deleteRestaurantResponse (Long id) { // 삭제
+        restaurantResponseDtoRepository.deleteById(id);
+    }
 
 
 }
