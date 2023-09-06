@@ -1,6 +1,7 @@
-package Nawa3.Nawa3.dto;
+package Nawa3.Nawa3.Entity;
 
 
+import Nawa3.Nawa3.dto.BaseTimeEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -34,6 +35,7 @@ public class Restaurant extends BaseTimeEntity {
 
     @Column(name = "img_source")
     private String imgSource;
+
 
     // 기본생성자를 이용한 프록시기술등 활용도가 있는 부분이 있지만 나중에 알아보자
 }
