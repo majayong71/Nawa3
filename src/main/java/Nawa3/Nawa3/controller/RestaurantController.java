@@ -3,11 +3,14 @@ package Nawa3.Nawa3.controller;
 
 import Nawa3.Nawa3.Entity.Restaurant;
 import Nawa3.Nawa3.dto.RestaurantResponseDto;
+import Nawa3.Nawa3.repository.RestaurantRepository;
 import Nawa3.Nawa3.service.RestaurantService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
@@ -22,12 +25,31 @@ public class RestaurantController {
         return restaurantResponseDtos;
     }
 
-    @PatchMapping("/api/restaurants/description") // 09-06 오후 7:02
-    public void findByIdUpdateDescription() {
-        restaurantService.updateDescription(null,);
+//    @PatchMapping("/api/restaurants/{id}/descriptions") //업데이트
+//    public RestaurantService updateDescription(@PathVariable Long id, @RequestParam String description ) {
+//        restaurantService.updateRestaurantDescription(id,description);
+//        return restaurantService;
+//    }
+    @PatchMapping("/{id}/description")
+    public ResponseEntity<RestaurantResponseDto> updateDescription(
+            @PathVariable Long id,
+            @RequestParam String description
+    )
+    {
+        Restaurant updatedRestaurant = restaurantService.updateRestaurantDescription(id, description);
+        if (updatedRestaurant != null) {
+            return ResponseEntity.ok(RestaurantResponseDto.of(updatedRestaurant));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
-
+//    @PatchMapping("api/restaurants/{id}/descriptions")
+//    public List<RestaurantResponseDto> updateDescriptionById (@PathVariable Long id, String description) {
+////Patch 요청을 받아 id값에 맞는 description을 수정해주고 RestaurantResponseDto 로 변환해주는 코드
+//        Optional<Restaurant> restaurants = restaurantService.updateDescriptionById(id,description);
+//        return restaurants.stream().map(RestaurantResponseDto::of).collect(Collectors.toList());
+//    }
 
 //    @GetMapping ("/api/restaurants")
 //    public List<RestaurantResponseDto> findAll() { // 전체 조회

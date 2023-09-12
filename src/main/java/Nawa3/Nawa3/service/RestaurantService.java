@@ -1,9 +1,11 @@
 package Nawa3.Nawa3.service;
 import Nawa3.Nawa3.Entity.Restaurant;
 import Nawa3.Nawa3.dto.RestaurantResponseDto;
+import Nawa3.Nawa3.exception.RestaurantNotFoundException;
 import Nawa3.Nawa3.repository.RestaurantRepository;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import lombok.RequiredArgsConstructor;
@@ -55,12 +57,26 @@ public class RestaurantService { // Restaurant 에 관련된 로직 , 기능 클
         return dtos;
     }
 
-    public void updateDescription (Long id, String description) {
-
-        Restaurant restaurants = restaurantRepository.findById(id).get();
-        restaurants.setDescription(description);
-        restaurantRepository.save(restaurants);
-
+    public Restaurant updateRestaurantDescription (Long id, String newDescription) {
+        Restaurant restaurant = restaurantRepository.findById(id).get();
+        restaurant.setDescription(newDescription);
+        return restaurantRepository.save(restaurant);
+    }
+//    public Optional<Restaurant> updateDescriptionById (Long id, String description) { // description 업데이트
+//        Optional<Restaurant> restaurant = restaurantRepository.updateDescriptionById(id,description);
+//        if (restaurant.isEmpty()) {
+//            throw new RestaurantNotFoundException(401 , "Id가 존재하지 않습니다.");
+//        } else {
+//            return restaurantRepository.updateDescriptionById(id,description);
+//        }
+//    }
+    public Optional<Restaurant> findById (Long id) { //
+        Optional<Restaurant> restaurant = restaurantRepository.findById(id);
+        if (restaurant.isEmpty()) { // id 값이 비어있을 경우
+            throw new RestaurantNotFoundException(401 , "Id가 존재하지 않습니다.");
+        } else{
+           return restaurantRepository.findById(id); // 성공하면 id 값을 담은 Optional<Restaurant>를 반환한다.
+        }
     }
 
     public void deleteRestaurantResponse (Long id) { // 삭제
