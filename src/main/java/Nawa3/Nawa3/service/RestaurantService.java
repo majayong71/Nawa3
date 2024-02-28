@@ -1,15 +1,17 @@
 package Nawa3.Nawa3.service;
+
 import Nawa3.Nawa3.Entity.Restaurant;
 import Nawa3.Nawa3.dto.RestaurantResponseDto;
 import Nawa3.Nawa3.exception.RestaurantNotFoundException;
 import Nawa3.Nawa3.repository.RestaurantRepository;
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
@@ -57,12 +59,21 @@ public class RestaurantService { // Restaurant 에 관련된 로직 , 기능 클
         return dtos;
     }
 
-    public Restaurant updateRestaurantDescription (Long id, String newDescription) {
-        Restaurant restaurant = restaurantRepository.findById(id).get();
-        restaurant.setDescription(newDescription);
-        return restaurantRepository.save(restaurant);
+    @Transactional
+    public boolean updateRestaurantDescription(Long id, String newDescription) {
+        Optional<Restaurant> optionalRestaurant = restaurantRepository.findById(id);
+
+        if (optionalRestaurant.isPresent()) {
+            Restaurant restaurant = optionalRestaurant.get();
+            restaurant.setDescription(newDescription);
+            restaurantRepository.save(restaurant);
+            return true;
+        }
+
+        return false;
     }
-//    public Optional<Restaurant> updateDescriptionById (Long id, String description) { // description 업데이트
+
+    //    public Optional<Restaurant> updateDescriptionById (Long id, String description) { // description 업데이트
 //        Optional<Restaurant> restaurant = restaurantRepository.updateDescriptionById(id,description);
 //        if (restaurant.isEmpty()) {
 //            throw new RestaurantNotFoundException(401 , "Id가 존재하지 않습니다.");
@@ -70,7 +81,7 @@ public class RestaurantService { // Restaurant 에 관련된 로직 , 기능 클
 //            return restaurantRepository.updateDescriptionById(id,description);
 //        }
 //    }
-    public Optional<Restaurant> findById (Long id) { //
+    public Optional<Restaurant> findById(Long id) { //
         Optional<Restaurant> restaurant = restaurantRepository.findById(id);
         if (restaurant.isEmpty()) { // id 값이 비어있을 경우
             throw new RestaurantNotFoundException(401 , "Id가 존재하지 않습니다.");
