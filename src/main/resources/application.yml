@@ -1,0 +1,45 @@
+spring:
+  config:
+    activate:
+      on-profile: test
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: root
+    password: QhrtnswoTkddl1!6
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+# ddl-auto = Entity 가 달린 class 를 참고하여 table 을 만들어주는 옵션
+# create 는 다 지우고 새로 만드는 옵션이기 때문에 저장하고싶은 data가 있다면
+# update 로 바꾸거나 비워둔 상태여야 한다.
+logging:
+  level:
+    org.hibernate.SQL: debug
+# 운영단계에서는 log 는 system.out 로 출력해서는 안되고
+# logger로 통해서 남겨야한다.
+
+#  config:
+#    activate:
+#      on-profile: local
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: root
+#    password: QhrtnswoTkddl1!6
+#    url: jdbc:mysql://localhost:3306/nawa
+#server:
+#  port: 8081
+
+mybatis:
+  mapper-locations: classpath:/mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+  # JSP ?? ??,, MYBATIS ??

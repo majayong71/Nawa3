@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAWA , 인기있는 공간이 궁금하다면</title>
+    <link th:href="@{/css/style.css}"
+            rel="stylesheet" href="/../resources/static/css/style.css">
+    <script src="https://kit.fontawesome.com/8dd996c4db.js" crossorigin="anonymous">
+    </script>
+</head>
+<body>
+<div th:each="im : ${img0}">
+    <input type="text" th:value="${im.count}">
+    [[${im.count}]]
+</div>
+
+</body>
+
+<footer>
+    Footer
+</footer>
+</html>
