@@ -1,9 +1,11 @@
 package Nawa3.Nawa3.dto;
 
-
-import Nawa3.Nawa3.Entity.Restaurant;
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor

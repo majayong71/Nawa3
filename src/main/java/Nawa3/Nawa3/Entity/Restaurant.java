@@ -1,13 +1,7 @@
 package Nawa3.Nawa3.Entity;
-
-
 import Nawa3.Nawa3.dto.BaseTimeEntity;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.CreationTimestamp;
-
-import java.sql.Timestamp;
-
 @Entity //Entity 클래스
 @Getter
 @Setter
