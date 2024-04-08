@@ -23,7 +23,7 @@ header {
 }
 
 div {
-    border: 5px solid greenyellowR
+    border: 5px solid greenyellow
 }
 
 .fullLayOut {
@@ -66,7 +66,8 @@ div {
 }
 
 .background-img {
-    background-image: url("../resources/static/img/images/Northtown.jpg");
+    background-color: black;
+    background-image: url("static/img/images/Northtown.jpg");
     height: 1140px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -130,7 +131,7 @@ div {
 }
 
 .card__img1 {
-    width: 300px;
+    width: 100px;
     height: 300px;
     background-position:center;
     background-repeat: no-repeat;

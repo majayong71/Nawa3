@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAWA , 인기있는 공간이 궁금하다면</title>
-    <link th:href="@{/css/style.css}"
-          rel="stylesheet" href="/../resources/static/css/style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
     <script src="https://kit.fontawesome.com/8dd996c4db.js" crossorigin="anonymous">
     </script>
     <script
@@ -35,14 +34,13 @@
                 <li><a class="link" href="#"><i class="fas fa-address-card"></i></a></li>
             </ul>
         </nav>
-        <!--        <div class="background-img">-->
-        <img th : src="background">
-        <div class="center__button">
-            <div class="centerText">
-                <h2>데이터 기준의 트랜드한 장소를 소개해 드려요!</h2>
+        <div class="background-img">
+            <div class="center__button">
+                <div class="centerText">
+                    <h2>데이터 기준의 트랜드한 장소를 소개해 드려요!</h2>
+                </div>
             </div>
         </div>
-        <!--        </div>-->
     </div>
 </header>
 <div class="fullLayOut2">
@@ -51,18 +49,66 @@
         Restaurant - 식당 -
     </h2>
 
-    <div class="first__area">
-        <!--    타임리프 문법 th:each -->
-        <li th:each="a : ${crawlingByImgsource}">
+    <div class="contant__ranking__box">
+        <img class="card__img1">
+        <div class="ranking">
+            <h2>1</h2>
+        </div>
+        <div class="card__text">
+            <h4>
+                텍스트 영역<br>
+            </h4>
+            <p>텍스트 영역</p>
+        </div>
+    </div>
 
-        <div class="content__ranking__box" >
-            <img class="card__img1" th:src="${a.imgSource}" width="300">
+        <div class="contant__ranking__box">
+            <img class="card__img2">
             <div class="ranking">
-                <h2>1</h2>
+                <h2>2</h2>
             </div>
             <div class="card__text">
                 <h4>
-                    <br>
+                    텍스트 영역<br>
+                </h4>
+                <p>텍스트 영역</p>
+            </div>
+        </div>
+
+        <div class="contant__ranking__box">
+            <img class="card__img3">
+            <div class="ranking">
+                <h2>3</h2>
+            </div>
+            <div class="card__text">
+                <h4>
+                    텍스트 영역<br>
+                </h4>
+                <p>텍스트 영역</p>
+            </div>
+        </div>
+
+        <div class="contant__ranking__box">
+            <img class="card__img4">
+            <div class="ranking">
+                <h2>4</h2>
+            </div>
+            <div class="card__text">
+                <h4>
+                    텍스트 영역<br>
+                </h4>
+                <p>텍스트 영역</p>
+            </div>
+        </div>
+
+        <div class="contant__ranking__box">
+            <img class="card__img5">
+            <div class="ranking">
+                <h2>5</h2>
+            </div>
+            <div class="card__text">
+                <h4>
+                    텍스트 영역<br>
                 </h4>
                 <p>텍스트 영역</p>
             </div>

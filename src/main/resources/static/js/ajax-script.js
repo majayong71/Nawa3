@@ -1,5 +1,5 @@
 $(document).ready(function  () {
-    $("first__area.")
+    $("first__area")
 
 $.ajax({
     url : '/data',
@@ -15,6 +15,7 @@ $.ajax({
     // 요청이 실패했을 때 실행할 콜백 함수
     console.error(error); // 에러메세지를 콘솔에 출력.
     }
+});
 });
 
 
