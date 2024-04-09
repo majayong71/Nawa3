@@ -67,7 +67,7 @@ div {
 
 .background-img {
     background-color: black;
-    background-image: url("static/img/images/Northtown.jpg");
+    background-image: url("../img/images/Northtown.jpg");
     height: 1140px;
     background-repeat: no-repeat;
     background-size: cover;

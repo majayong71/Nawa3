@@ -10,12 +10,14 @@ import java.time.LocalDateTime;
 public class Crawling {
 
 
+    // primary key
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer count; // primary key
+    private Integer count;
 
+    // 순위
     @Column
-    private Integer rank; // 순위
+    private Integer rank;
 
     @Column
     private String placeType;

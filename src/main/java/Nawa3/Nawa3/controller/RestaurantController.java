@@ -18,7 +18,8 @@ public class RestaurantController {
 
     private final RestaurantService restaurantService;
 
-    @GetMapping("/api/restaurants/all") // 전체 조회
+    // 전체 조회
+    @GetMapping("/api/restaurants/all")
     public List<RestaurantResponseDto> findAll() {
         List<Restaurant> restaurants = restaurantService.findAllRestaurants();
         return restaurants
@@ -27,7 +28,8 @@ public class RestaurantController {
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("/api/restaurants/get/{id}") // 이름으로 Entity 조회
+    // 이름으로 Entity 조회
+    @GetMapping("/api/restaurants/get/{id}")
     public List<RestaurantResponseDto> findRestaurantsByName(@RequestParam String name) {
         List<Restaurant> restaurants = restaurantService.findRestaurantsByName(name);
         return restaurants
@@ -36,12 +38,14 @@ public class RestaurantController {
                 .collect(Collectors.toList());
     }
 
-    @DeleteMapping("/api/restaurants/{id}") // 선택 삭제
+    // 선택 삭제
+    @DeleteMapping("/api/restaurants/{id}")
     public void deleteRestaurantResponse(@PathVariable Long id) {
         restaurantService.deleteById(id);
     }
 
-    @PutMapping("/api/restaurants/update/{id}") // 선택 수정
+    // 선택 수정
+    @PutMapping("/api/restaurants/update/{id}")
     public ResponseEntity<RestaurantResponseDto> updateRestaurant(
             @PathVariable Long id,
             @RequestBody RestaurantRequestDto updateRequestDto) {
