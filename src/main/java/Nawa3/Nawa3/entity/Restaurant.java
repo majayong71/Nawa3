@@ -1,4 +1,4 @@
-package Nawa3.Nawa3.Entity;
+package Nawa3.Nawa3.entity;
 import Nawa3.Nawa3.dto.BaseTimeEntity;
 import jakarta.persistence.*;
 import lombok.*;
@@ -16,7 +16,8 @@ public class Restaurant extends BaseTimeEntity {
     // PK 생성값을 DB종류에 따라서 맞는 방식을 사용한다
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "restaurant_id")
+    private Long RestaurantId;
 
     @Column
     private String name;

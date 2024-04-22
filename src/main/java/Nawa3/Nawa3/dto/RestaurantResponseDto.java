@@ -1,6 +1,6 @@
 package Nawa3.Nawa3.dto;
 
-import Nawa3.Nawa3.Entity.Restaurant;
+import Nawa3.Nawa3.entity.Restaurant;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,7 +21,7 @@ public class RestaurantResponseDto { // 응답처리를 위한 DTO
     // Restaurant 엔티티를 파라미터로 받아 DTO를 반환하는 메서드
     public static RestaurantResponseDto of(Restaurant restaurant) {
         return new RestaurantResponseDto(
-                restaurant.getId(),
+                restaurant.getRestaurantId(),
                 restaurant.getName(),
                 restaurant.getDescription(),
                 restaurant.getPlaceType(),

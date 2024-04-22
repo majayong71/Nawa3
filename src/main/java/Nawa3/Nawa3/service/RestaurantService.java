@@ -1,7 +1,7 @@
 package Nawa3.Nawa3.service;
 
-import Nawa3.Nawa3.Entity.Restaurant;
 import Nawa3.Nawa3.dto.RestaurantRequestDto;
+import Nawa3.Nawa3.entity.Restaurant;
 import Nawa3.Nawa3.exception.RestaurantNotFoundException;
 import Nawa3.Nawa3.repository.RestaurantRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -44,7 +44,7 @@ public class RestaurantService { // Restaurant 에 관련된 로직 , 기능 클
                 .orElseThrow(() -> new EntityNotFoundException("Restaurant not found with id: " + id));
         restaurant.setName(updateRequestDto.getName());
         restaurant.setDescription(updateRequestDto.getDescription());
-        restaurant.setId(updateRequestDto.getId());
+        restaurant.setRestaurantId(updateRequestDto.getId());
         restaurant.setImgSource(updateRequestDto.getImgSource());
         restaurant.setPlaceType(updateRequestDto.getPlaceType());
 

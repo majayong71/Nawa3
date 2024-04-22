@@ -7,9 +7,11 @@ import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+
+//응답처리를 위한 Entity
 @Getter
 @NoArgsConstructor
-public class RestaurantRequestDto extends BaseTimeEntity { //응답처리를 위한 Entity
+public class RestaurantRequestDto extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

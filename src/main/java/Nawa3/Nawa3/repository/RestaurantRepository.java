@@ -1,6 +1,6 @@
 package Nawa3.Nawa3.repository;
 
-import Nawa3.Nawa3.Entity.Restaurant;
+import Nawa3.Nawa3.entity.Restaurant;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

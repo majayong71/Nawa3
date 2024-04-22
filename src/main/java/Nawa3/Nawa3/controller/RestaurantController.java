@@ -1,8 +1,8 @@
 package Nawa3.Nawa3.controller;
 
-import Nawa3.Nawa3.Entity.Restaurant;
 import Nawa3.Nawa3.dto.RestaurantRequestDto;
 import Nawa3.Nawa3.dto.RestaurantResponseDto;
+import Nawa3.Nawa3.entity.Restaurant;
 import Nawa3.Nawa3.service.RestaurantService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +29,7 @@ public class RestaurantController {
     }
 
     // 이름으로 Entity 조회
-    @GetMapping("/api/restaurants/get/{id}")
+    @GetMapping("/api/restaurants")
     public List<RestaurantResponseDto> findRestaurantsByName(@RequestParam String name) {
         List<Restaurant> restaurants = restaurantService.findRestaurantsByName(name);
         return restaurants
@@ -49,8 +49,10 @@ public class RestaurantController {
     public ResponseEntity<RestaurantResponseDto> updateRestaurant(
             @PathVariable Long id,
             @RequestBody RestaurantRequestDto updateRequestDto) {
+
         Restaurant updateRestaurant = restaurantService.updateRestaurant(id, updateRequestDto);
         RestaurantResponseDto responseDto = RestaurantResponseDto.of(updateRestaurant);
+
         return ResponseEntity.ok(responseDto);
     }
 }

@@ -1,4 +1,4 @@
-package Nawa3.Nawa3.Entity;
+package Nawa3.Nawa3.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
@@ -8,7 +8,6 @@ import jakarta.persistence.Id;
 import java.time.LocalDateTime;
 
 public class Crawling {
-
 
     // primary key
     @Id
