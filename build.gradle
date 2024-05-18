@@ -19,6 +19,8 @@ repositories {
 }
 
 dependencies {
+	
+	implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.19.1'
 	implementation 'org.mariadb.jdbc:mariadb-java-client:3.0.10'// MariaDB 의존성 추가
 	implementation('org.modelmapper:modelmapper:2.4.2') // ModelMapper 의존성 추가
 	developmentOnly("org.springframework.boot:spring-boot-devtools") // html 프리뷰
