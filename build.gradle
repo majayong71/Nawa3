@@ -23,6 +23,12 @@ dependencies {
 	// Selenium 의존성
 	implementation 'org.seleniumhq.selenium:selenium-java:4.21.0'
 	implementation 'org.seleniumhq.selenium:selenium-chrome-driver:4.21.0'
+	// WebDriverManager 의존성
+	implementation 'io.github.bonigarcia:webdrivermanager:5.8.0'
+	// Apache HttpClient 의존성 ( WebDriverManager 가 필요로 한다 )
+	implementation 'org.apache.httpcomponents.client5:httpclient5:5.1'
+	implementation 'org.apache.httpcomponents.core5:httpcore5:5.1'
+
 
 	// MariaDB 의존성 추가
 	implementation 'org.mariadb.jdbc:mariadb-java-client:3.0.10'

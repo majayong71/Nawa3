@@ -1,12 +1,11 @@
 package Nawa3.Nawa3.service;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.service.DriverService;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -14,21 +13,94 @@ import java.util.List;
 
 public class CrawlingTest {
 
-    private static WebDriver driver; // WebDriver 인터페이스를 구현한 객체 참조 변수
-    public static String WEB_DRIVER_ID = "webdriver.chrome.driver"; // Chrome WebDriver의 시스템 프로퍼티 키
-    private static String WEB_DRIVER_PATH = "./chromedriver"; // Chrome WebDriver의 경로
-
-    // Chrome WebDriver 인스턴스를 반환하는 메서드
+    // ChromeDriver 인스턴스를 반환하는 메서드
     public static WebDriver getChromeDriver() {
+        // WebDriverManager를 사용하여 크롬드라이버를 자동으로 설정
+        WebDriverManager.chromedriver().setup();
 
-
-        // WebDriver 경로를 시스템 프로퍼티에 설정
-            System.setProperty("webdriver.chrome.driver", WEB_DRIVER_PATH);
-
-        // Chrome WebDriver를 생성하고 설정된 옵션을 적용
+        // ChromeOptions 설정
         ChromeOptions chromeOptions = new ChromeOptions();
-//        chromeOptions.setHeadless(true); // 헤드리스 모드로 실행하여 브라우저를 보이지 않게 설정
-        chromeOptions.addArguments("--remote-allow-origins=*"); // 크로스 도메인 문제 해결
+        chromeOptions.addArguments("--remote-allow-origins=*");  // 원격 접근 허용
+        chromeOptions.addArguments("--disable-web-security");  // 웹 보안 비활성화
+        chromeOptions.addArguments("--disable-gpu");  // GPU 가속 비활성화
+        chromeOptions.addArguments("--no-sandbox");  // 샌드박스 모드 비활성화
+        chromeOptions.addArguments("--disable-dev-shm-usage");  // 공유 메모리 사용 비활성화
+        chromeOptions.addArguments("--disable-blink-features=AutomationControlled");  // 자동 제어 기능 비활성화
+        chromeOptions.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36");  // 사용자 에이전트 설정
+        chromeOptions.addArguments("Accept-Language=ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7");  // 언어 설정
+        chromeOptions.addArguments("Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7");  // Accept 헤더 설정
+
+        // ChromeDriver 인스턴스 생성 및 반환
+        WebDriver driver = new ChromeDriver(chromeOptions);
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));  // 페이지 로딩 타임아웃 설정
+        return driver;
+    }
+
+    public static void main(String[] args) {
+        // ChromeDriver 인스턴스 생성
+        WebDriver driver = getChromeDriver();
+
+        // 크롤링할 페이지 URL
+        String url = "https://map.naver.com/p/search/%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD%EB%A7%9B%EC%A7%91?c=16.24,0,0,0,dh";
+        List<WebElement> webElementList = new ArrayList<>();  // 웹 요소를 담을 리스트
+        String query = "span.place_bluelink.TYaxT";  // CSS 선택자
+        String iframeId = "searchIframe";  // iframe 요소의 ID
+
+        try {
+            driver.get(url);  // URL 로드
+            Thread.sleep(5000);  // 5초 대기
+            driver.switchTo().frame(driver.findElement(By.id(iframeId)));  // 특정 iframe으로 전환
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));  // 암묵적 대기 설정
+            webElementList = driver.findElements(By.cssSelector(query));  // 요소 찾기
+
+            // 요소 텍스트 출력
+            for (WebElement element : webElementList) {
+                System.out.println(element.getText());
+            }
+
+            driver.switchTo().defaultContent();  // 메인 페이지로 다시 전환
+
+            // 페이지 타이틀과 현재 URL 출력
+            System.out.println("Page title is: " + driver.getTitle());
+            System.out.println("Current URL: " + driver.getCurrentUrl());
+
+        } catch (Exception e) {
+            System.out.println("An error occurred: " + e.getMessage());
+        } finally {
+            driver.quit();  // 브라우저 종료
+        }
+    }
+}
+
+
+//package Nawa3.Nawa3.service;
+//
+//import io.github.bonigarcia.wdm.WebDriverManager;
+//import org.openqa.selenium.By;
+//import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.WebElement;
+//import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.chrome.ChromeOptions;
+//
+//import java.time.Duration;
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class CrawlingTest {
+//
+//    private static WebDriver driver; // WebDriver 인터페이스를 구현한 객체 참조 변수
+//    public static String WEB_DRIVER_ID = "webdriver.chrome.driver"; // Chrome WebDriver의 시스템 프로퍼티 키
+//    private static String WEB_DRIVER_PATH = "C:\\Users\\ASUS\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe"; // Chrome WebDriver의 경로
+//
+//    // Chrome WebDriver 인스턴스를 반환하는 메서드
+//    public static WebDriver getChromeDriver() {
+//
+//        // WebDriverManager를 사용하여 드라이버를 자동으로 설정
+//        WebDriverManager.chromedriver().setup();
+//
+//        // Chrome WebDriver를 생성하고 설정된 옵션을 적용
+//        ChromeOptions chromeOptions = new ChromeOptions();
+//        chromeOptions.addArguments("--remote-allow-origins=*"); // 크로스 도메인 문제 해결
 //        chromeOptions.addArguments("--disable-web-security"); // 웹 보안 비활성화
 //        chromeOptions.addArguments("--disable-gpu"); // GPU 가속 비활성화
 //        chromeOptions.addArguments("--no-sandbox"); // 샌드박스 모드 비활성화
@@ -37,56 +109,51 @@ public class CrawlingTest {
 //        chromeOptions.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36");// 사용자 에이전트 설정
 //        chromeOptions.addArguments("Accept-Language=ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7"); // 언어 설정
 //        chromeOptions.addArguments("Accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"); // Accept 헤더 설정
-
-        DriverService service = new ChromeDriverService.Builder()
-                .usingDriverExecutable(new java.io.File("./chromedriver.exe"))
-                .usingAnyFreePort()
-                .build();
-        WebDriver driver = new ChromeDriver((ChromeDriverService) service, chromeOptions);
-
-
-        // Chrome WebDriver 인스턴스 생성
+//
+//        // Chrome WebDriver 인스턴스 생성
 //        WebDriver driver = new ChromeDriver(chromeOptions);
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // 페이지 로딩 타임아웃 설정
-        return driver;
-    }
-
-    public static void main(String[] args) {
-        // Chrome WebDriver 인스턴스 생성
-        WebDriver driver = getChromeDriver();
-
-        String url = "https://pcmap.place.naver.com/restaurant/list?query=%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD%EB%A7%9B%EC%A7%91&x=126.837592&y=37.323795&clientX=126.837592&clientY=37.323795&display=70&ts=1715843480853&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD%EB%A7%9B%EC%A7%91"; // 크롤링할 페이지 URL
-        List<WebElement> webElementList = new ArrayList<>(); // 웹 요소를 담을 리스트
-        String query ="span.place_bluelink.TYaxT"; // CSS 선택자
+//        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // 페이지 로딩 타임아웃 설정
+//        return driver;
+//    }
+//
+//    public static void main(String[] args) {
+//
+//        // Chrome WebDriver 인스턴스 생성
+//        WebDriver driver = getChromeDriver();
+//
+//        // 크롤링할 페이지 URL
+//        String url = "https://map.naver.com/p/search/%ED%99%8D%EB%8C%80%EC%9E%85%EA%B5%AC%EC%97%AD%EB%A7%9B%EC%A7%91?c=16.24,0,0,0,dh"; // 크롤링할 페이지 URL
+//        List<WebElement> webElementList = new ArrayList<>(); // 웹 요소를 담을 리스트
+//        String query = "span.place_bluelink.TYaxT"; // CSS 선택자
 //        String iframeId = "searchIframe"; // iframe 요소의 id
-
-        try {
-            driver.get(url);
-            Thread.sleep(5000);
-            //특정 iframe 으로 전환
+//
+//        try {
+//            driver.get(url);
+//            Thread.sleep(5000);
+//            // 특정 iframe 으로 전환
 //            driver.switchTo().frame(driver.findElement(By.id(iframeId)));
-            // iframe 내부에서 요소를 찾음
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-            webElementList = driver.findElements(By.cssSelector(query));
-
-            // 요소를 텍스트로 출력
-            for (WebElement element : webElementList) {
-                System.out.println(element.getText());
-            }
-
-            // 메인 페이지로 다시 전환
-            driver.switchTo().defaultContent();
-
-            System.out.println("Page title is: " + driver.getTitle());
-            System.out.println("Current URL: " + driver.getCurrentUrl());
-
-        } catch (Exception e) {
-            System.out.println("An error occurred: " + e.getMessage());
-        } finally {
-            driver.quit();
-        }
-    }
-}
+//            // iframe 내부에서 요소를 찾음
+//            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//            webElementList = driver.findElements(By.cssSelector(query));
+//
+//            // 요소를 텍스트로 출력
+//            for (WebElement element : webElementList) {
+//                System.out.println(element.getText());
+//            }
+//
+//            // 메인 페이지로 다시 전환
+//            driver.switchTo().defaultContent();
+//
+//            System.out.println("Page title is: " + driver.getTitle());
+//            System.out.println("Current URL: " + driver.getCurrentUrl());
+//
+//        } catch (Exception e) {
+//            System.out.println("An error occurred: " + e.getMessage());
+//        } finally {
+//            driver.quit();
+//        }
+//    }
+//}
 
 
 //package Nawa3.Nawa3.service;
